@@ -35,6 +35,34 @@ if (minutes < 10) {
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day}, ${month} ${dates}, ${year} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<li class="list-group-item flex-fill list-group-horizontal">`;
+  let days = [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<li class="list-group-item flex-fill list-group-horizontal">
+          ${day} <br />
+          ☀
+          <br />
+          100°F
+        </li>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</li>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -106,3 +134,5 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("Las Vegas");
+
+displayForecast();
