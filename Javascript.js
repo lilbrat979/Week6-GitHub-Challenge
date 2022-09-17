@@ -91,9 +91,18 @@ function displayCelsiusTemperature(event) {
   let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   temperartureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 let fahrenheitTemperature = null;
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("Las Vegas");
