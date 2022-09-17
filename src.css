@@ -21,7 +21,7 @@ h2 {
 }
 
 .humidity {
-  text-align: right;
+  text-align: left;
   font-size: 17px;
   padding-right: 20px;
   color: #142d4c;
@@ -59,4 +59,13 @@ span {
 .condition {
   text-transform: capitalize;
   font-size: 50px;
+}
+
+.picture {
+  padding-bottom: 60px;
+}
+
+.units {
+  position: relative;
+  top: -32px;
 }
