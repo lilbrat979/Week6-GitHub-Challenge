@@ -46,7 +46,7 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.daily;
-  let forecastHTML = `<li class="list-group-item flex-fill list-group-horizontal">`;
+  let forecastHTML = ``;
   forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
@@ -61,7 +61,7 @@ function displayForecast(response) {
 `;
   });
 
-  forecastHTML = forecastHTML + `</li>`;
+  forecastHTML = forecastHTML + ``;
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
